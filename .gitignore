@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Frontend
+node_modules/
+dist/
+
+# Local database
+artifacts/evaluation.db
+
+# macOS
+.DS_Store
+
+# Environment / secrets
+.env
+.env.*

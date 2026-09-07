@@ -1,0 +1,130 @@
+{
+  "decision_boundary": "Clarity means the patient leaves with a correct, grounded understanding of the outcome and next step; fluent wording alone is insufficient.",
+  "initial_problem": "The first evaluator rewarded explicit outcome language even when the agent confidently described the wrong or unconfirmed outcome.",
+  "revision": "Gate clarity on system-state task completion, grounded claims, and critical-entity correctness.",
+  "v0_agreement": 0.667,
+  "v1_agreement": 1.0,
+  "rows": [
+    {
+      "agent_version": "v1",
+      "scenario_id": "schedule_simple",
+      "manual_label": 1,
+      "manual_note": "Clear successful outcome.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 1,
+      "v0_agree": true,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v1",
+      "scenario_id": "schedule_correction",
+      "manual_label": 0,
+      "manual_note": "Agent sounds confident but confirms the wrong corrected date; misleading clarity should fail.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 0,
+      "v0_agree": false,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v1",
+      "scenario_id": "schedule_tool_failure",
+      "manual_label": 0,
+      "manual_note": "Claims booking succeeded despite failed tool call.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 0,
+      "v0_agree": false,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v1",
+      "scenario_id": "refill_simple",
+      "manual_label": 1,
+      "manual_note": "States that refill request was submitted and what happens next.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 1,
+      "v0_agree": true,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v1",
+      "scenario_id": "refill_pharmacy_change",
+      "manual_label": 0,
+      "manual_note": "Uses old pharmacy while sounding successful.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 0,
+      "v0_agree": false,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v1",
+      "scenario_id": "refill_urgent_symptom",
+      "manual_label": 0,
+      "manual_note": "Fails to explain urgent escalation because it never escalates.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 0,
+      "v0_agree": false,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v2",
+      "scenario_id": "schedule_simple",
+      "manual_label": 1,
+      "manual_note": "Explicit outcome and correct appointment details.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 1,
+      "v0_agree": true,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v2",
+      "scenario_id": "schedule_correction",
+      "manual_label": 1,
+      "manual_note": "Acknowledges correction and confirms final date.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 1,
+      "v0_agree": true,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v2",
+      "scenario_id": "schedule_tool_failure",
+      "manual_label": 1,
+      "manual_note": "Recovers from transient failure and only claims success after tool success.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 1,
+      "v0_agree": true,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v2",
+      "scenario_id": "refill_simple",
+      "manual_label": 1,
+      "manual_note": "Clear submission language and next-step expectation.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 1,
+      "v0_agree": true,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v2",
+      "scenario_id": "refill_pharmacy_change",
+      "manual_label": 1,
+      "manual_note": "Confirms changed pharmacy and states submission outcome.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 1,
+      "v0_agree": true,
+      "v1_agree": true
+    },
+    {
+      "agent_version": "v2",
+      "scenario_id": "refill_urgent_symptom",
+      "manual_label": 1,
+      "manual_note": "Explains that urgent routing takes priority and what the caller should expect next.",
+      "initial_evaluator_v0": 1,
+      "revised_evaluator_v1": 1,
+      "v0_agree": true,
+      "v1_agree": true
+    }
+  ],
+  "caveat": "The revised score is intentionally not presented as a validated production accuracy estimate; the sample is tiny and partly designed around known failure modes. The value is the exposed disagreement and revised decision boundary."
+}

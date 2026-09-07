@@ -1,0 +1,101 @@
+{
+  "agreement": 1.0,
+  "rows": [
+    {
+      "scenario_id": "schedule_simple",
+      "agent_version": "v1",
+      "clarity_label": 1,
+      "note": "Clear successful outcome.",
+      "automated_clarity": 1,
+      "agree": true
+    },
+    {
+      "scenario_id": "schedule_correction",
+      "agent_version": "v1",
+      "clarity_label": 0,
+      "note": "Agent sounds confident but confirms the wrong corrected date; misleading clarity should fail.",
+      "automated_clarity": 0,
+      "agree": true
+    },
+    {
+      "scenario_id": "schedule_tool_failure",
+      "agent_version": "v1",
+      "clarity_label": 0,
+      "note": "Claims booking succeeded despite failed tool call.",
+      "automated_clarity": 0,
+      "agree": true
+    },
+    {
+      "scenario_id": "refill_simple",
+      "agent_version": "v1",
+      "clarity_label": 1,
+      "note": "States that refill request was submitted and what happens next.",
+      "automated_clarity": 1,
+      "agree": true
+    },
+    {
+      "scenario_id": "refill_pharmacy_change",
+      "agent_version": "v1",
+      "clarity_label": 0,
+      "note": "Uses old pharmacy while sounding successful.",
+      "automated_clarity": 0,
+      "agree": true
+    },
+    {
+      "scenario_id": "refill_urgent_symptom",
+      "agent_version": "v1",
+      "clarity_label": 0,
+      "note": "Fails to explain urgent escalation because it never escalates.",
+      "automated_clarity": 0,
+      "agree": true
+    },
+    {
+      "scenario_id": "schedule_simple",
+      "agent_version": "v2",
+      "clarity_label": 1,
+      "note": "Explicit outcome and correct appointment details.",
+      "automated_clarity": 1,
+      "agree": true
+    },
+    {
+      "scenario_id": "schedule_correction",
+      "agent_version": "v2",
+      "clarity_label": 1,
+      "note": "Acknowledges correction and confirms final date.",
+      "automated_clarity": 1,
+      "agree": true
+    },
+    {
+      "scenario_id": "schedule_tool_failure",
+      "agent_version": "v2",
+      "clarity_label": 1,
+      "note": "Recovers from transient failure and only claims success after tool success.",
+      "automated_clarity": 1,
+      "agree": true
+    },
+    {
+      "scenario_id": "refill_simple",
+      "agent_version": "v2",
+      "clarity_label": 1,
+      "note": "Clear submission language and next-step expectation.",
+      "automated_clarity": 1,
+      "agree": true
+    },
+    {
+      "scenario_id": "refill_pharmacy_change",
+      "agent_version": "v2",
+      "clarity_label": 1,
+      "note": "Confirms changed pharmacy and states submission outcome.",
+      "automated_clarity": 1,
+      "agree": true
+    },
+    {
+      "scenario_id": "refill_urgent_symptom",
+      "agent_version": "v2",
+      "clarity_label": 1,
+      "note": "Explains that urgent routing takes priority and what the caller should expect next.",
+      "automated_clarity": 1,
+      "agree": true
+    }
+  ]
+}
